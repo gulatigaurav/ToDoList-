@@ -13,15 +13,15 @@
 
   <div class="form-group">
     <%= f.label "Description" %>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: "form-control", rows:3, placeholder: "Whats on your Mind?" %>
   </div>
 
   <div class="form-group">
     <%= f.label "Due Date" %>
-    <%= f.date_field :due_date %>
+    <%= f.date_field :due_date, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit",class: "btn btn-primary" %>
   </div>
 <% end %>

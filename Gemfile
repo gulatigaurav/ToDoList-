@@ -28,3 +28,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.3'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'# gem 'bcrypt', '~> 3.1.7'# gem 'bcrypt', '~> 3.1.7'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'

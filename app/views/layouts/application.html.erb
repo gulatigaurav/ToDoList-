@@ -3,23 +3,40 @@
   <head>
     <title>MyTodoApp</title>
     <%= csrf_meta_tags %>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+    
+    <%= render 'shared/navbar' %>
 
-       <% if current_user %>
-<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-       <% else %>
-       <%= link_to "Log in", new_user_session_path %> |
-       <%= link_to "Sign up", new_user_registration_path %>
-       <% end %>
-       <div class="container">
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Hello, world!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+
+
+
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= login_helper %>
+      <div class="container">
           <%= yield %>
-       </div>
+      </div>
+   <hr>
+
+    <footer>
+      <p>&copy; Company 2017</p>
+    </footer>
+
+
+
   </body>
   </html>

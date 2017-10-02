@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   def index
     @tasks = Task.all
   end
@@ -59,6 +59,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.fetch(:task, {})
+      params.require(:task).permit(:description, :due_date)
     end
 end

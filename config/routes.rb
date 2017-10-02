@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :tasks
+  resources :tasks, except: :show
   devise_for :users
   root 'pages#home'
   # get '/home',to: 'pages#home'

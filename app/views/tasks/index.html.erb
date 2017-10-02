@@ -1,28 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tasks</h1>
+<div class="jumbotron">
+  <h1 class="display-3"> <%= Time.now.strftime("%m/%d/%Y") %> </h1>
+  <p class="lead">Make your day more productive with every work in your list <i class="fa fa-check fa-2x" aria-hidden="true"></i>.</p>
+  <hr class="my-4">
+  <p class="lead">
+  <%= link_to 'New Task', new_task_path, class: "btn btn-primary btn-lg" %>
+  </p>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="5"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+    <% if @tasks.empty? %>
+        <h1> No pending work to be done. Have a Break...!!! </h1>
+    <% else %>
     <% @tasks.each do |task| %>
+    <div class="card text-center">
+      <div class="card-header">
+        Task
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">  <%= task.description %></h4>
+        <p class="card-text"><%= task.due_date %></p>
+        <%= link_to 'Edit', edit_task_path(task), class: "btn btn-warning" %>
+        <%= link_to 'Mark as Completed', task, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-success" %>
+      </div>
+      <div class="card-footer text-muted">
+        created <%= time_ago_in_words(task.created_at) %> ago
+      </div>
+    </div>
+     <br>
 
-      <tr>
-        <td>  <%= task.description %> <br></td>
-        <td>  <%= task.due_date %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+
     <% end %>
-  </tbody>
-</table>
-
+    <% end %>
 <br>
-
-<%= link_to 'New Task', new_task_path %>

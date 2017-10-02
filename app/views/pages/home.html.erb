@@ -3,6 +3,10 @@
   <div class="container">
     <h1 class="display-3"><i class="fa fa-list-ul" aria-hidden="true"></i> To Do List</h1>
     <p>This is a template for a simple To do List to increase your productivity. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+     <% if current_user %>
+       <%= link_to 'New Task', new_task_path, class: "btn btn-primary btn-lg" %>
+     <% else %>
+       <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+     <% end %>
   </div>
 </div>

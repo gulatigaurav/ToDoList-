@@ -1,9 +1,7 @@
 <% if flash[:alert] %>
   <%= js add_gritter(flash[:alert] , title: "ToDoList") %>
-<% elseif flash[:error]   %>
+<% elsif flash[:error]   %>
   <%= js add_gritter(flash[:error] , title: "ToDoList") %>
 <% else %>
   <%= js add_gritter(flash[:notice] , title: "ToDoList") %>
-
-
 <% end %>

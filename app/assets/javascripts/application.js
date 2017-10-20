@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require gritter
+//= require lib/typed
+//= require typed-implementation
 //= require turbolinks
 //= require_tree .
